@@ -29,7 +29,7 @@ header {
   justify-content: center;
   width: 100%;
   padding: 2rem 0;
-  background-color: #ffffff;
+  background-color: #fff;
   font-weight: bolder;
   border-bottom: solid 1px #e8e8e8;
 }
@@ -100,7 +100,7 @@ header {
 .book {
   display: flex;
   padding: 2.5rem 2rem;
-  background-color: #ffffff;
+  background-color: #fff;
   border: 1px solid #e8e8e8;
   justify-content: space-between;
 }
@@ -128,6 +128,3 @@ header {
 #check-status {
   width: 120px;
 }
-
-
-

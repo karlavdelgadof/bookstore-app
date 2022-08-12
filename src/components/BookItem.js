@@ -1,13 +1,14 @@
-
 function BookItem(props) {
-  const { title, genre, percentage, author, chapter } = props.book;
+  const {
+    title, genre, percentage, author, chapter,
+  } = props.book;
   return (
     <div className="book">
       <div className="b-info">
         <span>{ genre }</span>
         <h2>{ title }</h2>
         <h3>{ author }</h3>
-        <div className='actions-container'>
+        <div className="actions-container">
           <button type="button" className="btn" id="comment">Comments</button>
           <button type="button" className="btn" id="comment">Remove</button>
           <button type="button" className="btn" id="comment">Edit</button>

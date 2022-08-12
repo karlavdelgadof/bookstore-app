@@ -1,30 +1,30 @@
-import React, { useState } from "react";
-import BookItem from "./BookItem";
-import Form from "./Form";
+import React, { useState } from 'react';
+import BookItem from './BookItem';
+import Form from './Form';
 
 const books = [
   {
     id: 1,
-    title: "The Hunger Games",
-    genre: "Action",
+    title: 'The Hunger Games',
+    genre: 'Action',
     percentage: 64,
-    author: "Suzanne Collins",
+    author: 'Suzanne Collins',
     chapter: 17,
   },
   {
     id: 2,
-    title: "Dune",
-    genre: "Sci-Fi",
+    title: 'Dune',
+    genre: 'Sci-Fi',
     percentage: 35,
-    author: "Frank Herbert",
+    author: 'Frank Herbert',
     chapter: 3,
   },
   {
     id: 3,
-    title: "Capital in the Twenty-First Century",
-    genre: "Economy",
+    title: 'Capital in the Twenty-First Century',
+    genre: 'Economy',
     percentage: 18,
-    author: "Suzanne Collins",
+    author: 'Suzanne Collins',
     chapter: 8,
   },
 ];

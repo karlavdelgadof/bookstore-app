@@ -9,7 +9,7 @@ function App() {
         <Navigation />
       </header>
       <div id="main-sec">
-        <Outlet/>
+        <Outlet />
       </div>
     </div>
   );
