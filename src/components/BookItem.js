@@ -2,14 +2,14 @@
 
 function BookItem(props) {
   const {
-    title, genre, percentage, author, chapter,
-  } = props.book;
+    book,
+  } = props;
   return (
     <div className="book">
       <div className="b-info">
-        <span>{ genre }</span>
-        <h2>{ title }</h2>
-        <h3>{ author }</h3>
+        <span>{ book.genre }</span>
+        <h2>{ book.title }</h2>
+        <h3>{ book.author }</h3>
         <div className="actions-container">
           <button type="button" className="btn" id="comment">Comments</button>
           <button type="button" className="btn" id="comment">Remove</button>
@@ -18,13 +18,13 @@ function BookItem(props) {
       </div>
 
       <div className="progress-percent">
-        <h3>{ percentage }</h3>
+        <h3>{ book.percentage }</h3>
         <span>Completed</span>
       </div>
 
       <div className="update-progress">
         <span>Current Chapter</span>
-        <h2>{ chapter }</h2>
+        <h2>{ book.chapter }</h2>
         <button type="button">Update progress</button>
       </div>
 
