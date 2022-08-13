@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types,  react/destructuring-assignment */
+
 function BookItem(props) {
   const {
     title, genre, percentage, author, chapter,
