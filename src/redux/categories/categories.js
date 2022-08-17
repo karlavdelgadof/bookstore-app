@@ -1,4 +1,4 @@
-// Actions for books 
+// Actions for categories
 const CHECK_STATUS  = 'bookstore-app/categories/CHECK_STATUS';
 
 
