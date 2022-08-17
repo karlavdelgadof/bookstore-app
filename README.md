@@ -5,7 +5,7 @@
 ![HTML5](https://img.shields.io/badge/-HTML5-%23E44D27?style=flat-square&logo=html5&logoColor=ffffff)
 ![CSS3](https://img.shields.io/badge/-CSS3-%231572B6?style=flat-square&logo=css3)
 
-# Bookstore App
+# Bookstore App :books:
 > A Website App built with React and Redux that allows users to store/add and remove books and also keep track of their reading progress. 
 
 ## Built With :hammer_and_wrench: 
@@ -25,7 +25,6 @@ Preview will be displayed here soon...
 The live version will be displayed here soon...
 
 
-
 ## Set Up Guide :page_facing_up: 
 
 1. Use the following link for "$ git clone" the [repo](https://github.com/karlavdelgadof/bookstore-app) and cd bookstare-app
@@ -36,7 +35,7 @@ The live version will be displayed here soon...
 
 4. "code ." To open the project on your local editor
 
-5. Please click on the "acess link" so you can view the live demo
+5. Please click on the "access link" so you can check the live demo
 
 6. You can use the bookstore to add and store your favourite books, and also keep track of your reading.
 
@@ -50,8 +49,8 @@ The live version will be displayed here soon...
 
 ## Project Milestones
 
-- Milestone 1: Initialize project with components (React only). :gear:  
-- Milestone 2: Add reducers and actions. :hammer_and_wrench:
+- Milestone 1: Initialize project with components (React only). :heavy_check_mark:
+- Milestone 2: Add reducers and actions. :gear: 
 - Milestone 3: Use Redux in React components.	:hammer_and_wrench:
 - Milestone 4: Connect to API. :hammer_and_wrench:
 - Milestone 5: Styling. :hammer_and_wrench:
