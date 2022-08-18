@@ -1,6 +1,8 @@
+// import axios from "axios";
+import { createSlice } from '@reduxjs/toolkit';
+
 // Actions for books
-const ADD_BOOK = 'bookstore-app/books/ADD_BOOK';
-const REMOVE_BOOK = 'bookstore-app/books/REMOVE_BOOK';
+// const apiURL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/xLpSkyNe48QmO2ebahy2/books';
 
 const initialState = [{
   id: 1,
@@ -27,18 +29,17 @@ const initialState = [{
   chapter: 8,
 }];
 
-// Reducer
-export default function booksReducer(state = initialState, action) {
-  switch (action.type) {
-    case ADD_BOOK:
-      return state.concat(action.book);
-    case REMOVE_BOOK:
-      return state.filter((book) => book.id !== action.book.id);
-    default: return state;
-  }
-}
+export const booksSlice = createSlice({
+  name: 'books',
+  initialState,
+  reducers: {
+    addBook: (state, action) => { state.push(action.payload); },
+    removeBook: (state, action) => state.filter((book) => book.id !== action.payload.id),
+    getBooks: (action) => action.payload,
+  },
+});
 
-// Actions creators
-export const addBook = (book) => ({ type: ADD_BOOK, book });
+// Action creators are generated for each case reducer function
+export const { addBook, removeBook, getBooks } = booksSlice.actions;
 
-export const removeBook = (book) => ({ type: REMOVE_BOOK, book });
+export default booksSlice.reducer;
