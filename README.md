@@ -50,8 +50,8 @@ The live version will be displayed here soon...
 ## Project Milestones
 
 - Milestone 1: Initialize project with components (React only). :heavy_check_mark:
-- Milestone 2: Add reducers and actions. :gear: 
-- Milestone 3: Use Redux in React components.	:hammer_and_wrench:
+- Milestone 2: Add reducers and actions. :heavy_check_mark:
+- Milestone 3: Use Redux in React components.	:gear: 
 - Milestone 4: Connect to API. :hammer_and_wrench:
 - Milestone 5: Styling. :hammer_and_wrench:
 
