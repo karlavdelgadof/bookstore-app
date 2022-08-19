@@ -1,45 +1,54 @@
-// import axios from "axios";
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
 
 // Actions for books
-// const apiURL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/xLpSkyNe48QmO2ebahy2/books';
+const apiURL =
+"https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/q4jqYH5waNwpAMlI8Ds9/books";
 
-const initialState = [{
-  id: 1,
-  title: 'Book 1',
-  genre: 'Action',
-  percentage: 64,
-  author: 'Suzanne Collins',
-  chapter: 17,
-},
-{
-  id: 2,
-  title: 'Book 2',
-  genre: 'Sci-Fi',
-  percentage: 35,
-  author: 'Frank Herbert',
-  chapter: 3,
-},
-{
-  id: 3,
-  title: 'Book 3',
-  genre: 'Economy',
-  percentage: 18,
-  author: 'Suzanne Collins',
-  chapter: 8,
-}];
+const initialState = []
+
+export const addBook = createAsyncThunk("books/addBook", async (book) => {
+  const response = await axios.post(apiURL, book);
+  if (response.status === 201) {
+    return book;
+  }
+  return response.data;
+});
+
+export const getBooks = createAsyncThunk("books/getBooks", async () => {
+  const response = await axios.get(apiURL);
+  return response.data;
+});
+
+export const removeBook = createAsyncThunk("books/removeBook", async (book) => {
+  await axios.delete(`${apiURL}/${book.item_id}`);
+  console.log(book)
+  return book;
+  
+});
 
 export const booksSlice = createSlice({
-  name: 'books',
+  name: "books",
   initialState,
   reducers: {
-    addBook: (state, action) => { state.push(action.payload); },
-    removeBook: (state, action) => state.filter((book) => book.id !== action.payload.id),
-    getBooks: (action) => action.payload,
+    // removeBook: (state, action) => state.filter((book) => book.id !== action.payload.id),
+  },
+  extraReducers: (builder) => {
+    // Add reducers for additional action types here, and handle loading state as needed
+    builder
+      .addCase(addBook.fulfilled, (state, action) => {
+        // Add user
+        state.push(action.payload);
+      })
+      .addCase(getBooks.fulfilled, (state, action) => Object.entries(action.payload).map(
+        ([id, [book]]) => ({ ...book, item_id: id }),
+      ))
+      .addCase(removeBook.fulfilled, (state, action) => {
+        state = state.filter((book) => book.id !== action.payload.item_id)
+      })
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { addBook, removeBook, getBooks } = booksSlice.actions;
 
 export default booksSlice.reducer;
