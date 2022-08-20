@@ -239,14 +239,6 @@ header {
   padding-left: 0;
 }
 
-/* .btn :nth-child(n+1)::after {
-  content: "";
-  align-self: center;
-  width: 3px;
-  height: 5px;
-  background-color: #e8e8e8;
-} */
-
 .progress-percent {
   display: flex;
   gap: 2.5rem;
