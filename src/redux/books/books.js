@@ -1,13 +1,12 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
 // Actions for books
-const apiURL =
-"https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/q4jqYH5waNwpAMlI8Ds9/books";
+const apiURL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/q4jqYH5waNwpAMlI8Ds9/books';
 
-const initialState = []
+const initialState = [];
 
-export const addBook = createAsyncThunk("books/addBook", async (book) => {
+export const addBook = createAsyncThunk('books/addBook', async (book) => {
   const response = await axios.post(apiURL, book);
   if (response.status === 201) {
     return book;
@@ -15,20 +14,18 @@ export const addBook = createAsyncThunk("books/addBook", async (book) => {
   return response.data;
 });
 
-export const getBooks = createAsyncThunk("books/getBooks", async () => {
+export const getBooks = createAsyncThunk('books/getBooks', async () => {
   const response = await axios.get(apiURL);
   return response.data;
 });
 
-export const removeBook = createAsyncThunk("books/removeBook", async (book) => {
+export const removeBook = createAsyncThunk('books/removeBook', async (book) => {
   await axios.delete(`${apiURL}/${book.item_id}`);
-  console.log(book)
   return book;
-  
 });
 
 export const booksSlice = createSlice({
-  name: "books",
+  name: 'books',
   initialState,
   reducers: {
     // removeBook: (state, action) => state.filter((book) => book.id !== action.payload.id),
@@ -44,8 +41,12 @@ export const booksSlice = createSlice({
         ([id, [book]]) => ({ ...book, item_id: id }),
       ))
       .addCase(removeBook.fulfilled, (state, action) => {
-        state = state.filter((book) => book.id !== action.payload.item_id)
-      })
+        state.forEach((book) => {
+          if (book.item_id === action.payload.item_id) {
+            state.splice(state.indexOf(book), 1);
+          }
+        });
+      });
   },
 });
 
