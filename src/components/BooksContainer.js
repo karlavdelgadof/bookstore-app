@@ -10,7 +10,6 @@ export default function BooksContainer() {
   useEffect(() => {
     dispatch(getBooks());
   }, []);
-  console.log(books)
   return (
     <>
       <ul id="books-list">
