@@ -1,7 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-// Actions for books
 const apiURL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/q4jqYH5waNwpAMlI8Ds9/books';
 
 const initialState = [];
@@ -27,14 +26,12 @@ export const removeBook = createAsyncThunk('books/removeBook', async (book) => {
 export const booksSlice = createSlice({
   name: 'books',
   initialState,
-  reducers: {
-    // removeBook: (state, action) => state.filter((book) => book.id !== action.payload.id),
-  },
+  reducers: {},
   extraReducers: (builder) => {
-    // Add reducers for additional action types here, and handle loading state as needed
+    // Add reducers to handle loading state as needed
     builder
       .addCase(addBook.fulfilled, (state, action) => {
-        // Add user
+        // Add book
         state.push(action.payload);
       })
       .addCase(getBooks.fulfilled, (state, action) => Object.entries(action.payload).map(
@@ -50,6 +47,5 @@ export const booksSlice = createSlice({
   },
 });
 
-// Action creators are generated for each case reducer function
 
 export default booksSlice.reducer;
