@@ -1,8 +1,7 @@
-/* eslint-disable react/prop-types */
-
 import React from 'react';
 import CircularProgress from '@mui/material/CircularProgress';
 import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
 import { removeBook } from '../redux/books/books';
 
 function CircularProgressWithLabel(props) {
@@ -71,5 +70,16 @@ function BookItem(props) {
     </div>
   );
 }
+
+BookItem.propTypes = {
+  book: PropTypes.shape(
+    {
+      title: PropTypes.string,
+      author: PropTypes.string,
+      category: PropTypes.string,
+      item_id: PropTypes.string,
+    },
+  ).isRequired,
+};
 
 export default BookItem;
