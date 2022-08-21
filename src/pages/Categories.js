@@ -5,13 +5,15 @@ import { checkStatus } from '../redux/categories/categories';
 function Categories() {
   const dispatch = useDispatch();
   return (
-    <button
-      type="button"
-      id="check-status"
-      onClick={() => dispatch(checkStatus())}
-    >
-      Check status
-    </button>
+    <div id="categories-sec">
+      <button
+        type="button"
+        id="check-status"
+        onClick={() => dispatch(checkStatus())}
+      >
+        Check status
+      </button>
+    </div>
   );
 }
 

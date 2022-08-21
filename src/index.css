@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 * {
   box-sizing: border-box;
@@ -9,7 +9,7 @@
 
 body {
   height: 100vh;
-  font-family: 'Roboto Slab', serif;
+  font-family: "Roboto Slab", serif;
 }
 
 #root {
@@ -36,8 +36,8 @@ header {
 
 #navbar {
   display: flex;
-  width: 80%;
-  font-family: 'Montserrat', sans-serif;
+  width: 88%;
+  font-family: "Montserrat", sans-serif;
   gap: 3.5rem;
   align-items: center;
   justify-content: space-between;
@@ -61,7 +61,7 @@ header {
 
 .link {
   text-decoration: none;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   color: #121212;
   text-transform: uppercase;
   font-size: 0.813rem;
@@ -87,7 +87,7 @@ header {
   display: flex;
   flex-direction: column;
   gap: 4rem;
-  width: 80%;
+  width: 88%;
   padding-top: 2.5rem;
 }
 
@@ -95,6 +95,7 @@ header {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  list-style-type: none;
 }
 
 .book {
@@ -102,17 +103,98 @@ header {
   padding: 2.5rem 2rem;
   background-color: #fff;
   border: 1px solid #e8e8e8;
-  justify-content: space-between;
+  gap: 4rem;
 }
 
 .b-info {
   min-width: 400px;
+  font-family: "Roboto Slab", serif;
+}
+
+.b-category {
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: hsla(0, 0%, 7%, 0.45);
+  margin-bottom: 0.5rem;
+}
+
+.b-author {
+  font-size: 1rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4386bf;
 }
 
 #add-book {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  margin-bottom: 16rem;
+}
+
+#add-book h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.25rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.18px;
+  color: #8888;
+}
+
+.update-progress button {
+  width: 80%;
+  margin-top: 0.5rem;
+  height: 2.063rem;
+  font-family: inherit;
+  text-transform: uppercase;
+  font-size: 0.813rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.5px;
+  text-align: center;
+  border: none;
+  color: #fff;
+  border-radius: 3px;
+  background-color: #0290ff;
+}
+
+#add-book button {
+  cursor: pointer;
+  width: 20%;
+  height: 100%;
+  text-transform: uppercase;
+  background-color: #0290ff;
+  color: #fff;
+  font-size: 0.8rem;
+  font-family: inherit;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+  text-align: center;
+  border: none;
+  border-radius: 3px;
+}
+
+#title,
+#author,
+#form-control {
+  font-family: "Montserrat", sans-serif;
+  padding: 1rem;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  background-color: #fff;
 }
 
 #form-book {
@@ -125,6 +207,107 @@ header {
   flex: 2;
 }
 
+.actions-container {
+  width: 50%;
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.btn {
+  flex: 1;
+  margin-right: 0.3rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4386bf;
+  padding: 0 1rem;
+}
+
+.remove-btn {
+  border-left: solid 1px #e8e8e8;
+  border-right: solid 1px #e8e8e8;
+}
+
+.comment {
+  padding-left: 0;
+}
+
+.progress-percent {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.progress-percent::after {
+  content: "";
+  align-self: center;
+  width: 3px;
+  height: 80px;
+  background-color: #e8e8e8;
+}
+
+.percent-graph {
+  display: flex;
+  flex-direction: column;
+  font-family: "Montserrat", sans-serif;
+}
+
+.percentage {
+  font-size: 2.2rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #121212;
+}
+
+.update-progress {
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+  gap: 0.8rem;
+  font-weight: 300;
+  font-size: 1rem;
+  width: 20%;
+  justify-content: center;
+}
+
+.update-progress h2 {
+  text-transform: capitalize;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+#categories-sec {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: #2f2f2f;
+  align-items: center;
+  max-width: 1200px;
+}
+
 #check-status {
-  width: 120px;
+  cursor: pointer;
+  width: 15%;
+  height: 2rem;
+  text-transform: uppercase;
+  background-color: #0290ff;
+  color: #fff;
+  font-size: 0.8rem;
+  font-family: var(--roboto);
+  letter-spacing: 0.5px;
+  font-weight: 700;
+  text-align: center;
+  border: none;
+  border-radius: 3px;
 }

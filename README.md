@@ -18,11 +18,11 @@
 
 ## Preview :eye_speech_bubble:
 
-Preview will be displayed here soon...
+![](screenshot.png)
 
 ## Live Demo :arrow_forward:
 
-The live version will be displayed here soon...
+[Bookstore App](https://bookstore-kd.netlify.app/)
 
 
 ## Set Up Guide :page_facing_up: 
@@ -52,8 +52,8 @@ The live version will be displayed here soon...
 - Milestone 1: Initialize project with components (React only). :heavy_check_mark:
 - Milestone 2: Add reducers and actions. :heavy_check_mark:
 - Milestone 3: Use Redux in React components.	:heavy_check_mark:
-- Milestone 4: Connect to API. :gear:
-- Milestone 5: Styling. :hammer_and_wrench:
+- Milestone 4: Connect to API. :heavy_check_mark:
+- Milestone 5: Styling. :gear:
 
 ## 🤝 Contributing
 
