@@ -18,9 +18,10 @@ function Form() {
           type="button"
           onClick={() => {
             dispatch(addBook({
+              item_id: uuidv4(),
               title: bTitle,
               author: bAuthor,
-              id: uuidv4(),
+              category: 'Fiction',
             }));
             setAuthor('');
             setTitle('');

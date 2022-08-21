@@ -9,7 +9,7 @@ function BookItem(props) {
   } = props;
   const dispatch = useDispatch();
   return (
-    <div className="book" id={book.id}>
+    <div className="book" id={book.item_id}>
       <div className="b-info">
         <span>{ book.genre }</span>
         <h2>{ book.title }</h2>
